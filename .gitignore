@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# TanStack Router cache
+.tanstack
+.vercel
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
