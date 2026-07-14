@@ -1,0 +1,111 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" font-family="'Geist Variable', ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b22"/>
+      <stop offset="1" stop-color="#07071a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1c48" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#0a0a20" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3730a3"/>
+      <stop offset="0.5" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="bus" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b21b6"/>
+      <stop offset="0.5" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#818cf8"/>
+    </marker>
+    <marker id="ahv" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="4" fill="url(#accent)" opacity="0.5"/>
+
+  <text x="70" y="78" fill="#f4f4f5" font-size="40" font-weight="700">DeliveryJS — Arquitectura de microservicios</text>
+  <text x="70" y="112" fill="#8b8ba7" font-size="22">API Gateway · 4 servicios NestJS · mensajería asíncrona con RabbitMQ</text>
+
+  <g font-size="18" fill="#a1a1b5">
+    <line x1="1120" y1="70" x2="1170" y2="70" stroke="#818cf8" stroke-width="3" marker-end="url(#ah)"/>
+    <text x="1180" y="76">HTTP (síncrono)</text>
+    <line x1="1120" y1="100" x2="1170" y2="100" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ahv)"/>
+    <text x="1180" y="106">Evento (asíncrono)</text>
+  </g>
+
+  <!-- Connections -->
+  <line x1="235" y1="345" x2="285" y2="345" stroke="#818cf8" stroke-width="3" marker-end="url(#ah)"/>
+  <path d="M510,310 C580,250 590,210 615,210" fill="none" stroke="#818cf8" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="545" y="245" fill="#9ca3c4" font-size="16">/restaurantes</text>
+  <path d="M510,385 C580,440 590,500 615,500" fill="none" stroke="#818cf8" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="520" y="470" fill="#9ca3c4" font-size="16">/pedidos (JWT)</text>
+  <line x1="725" y1="465" x2="725" y2="235" stroke="#818cf8" stroke-width="3" marker-end="url(#ah)"/>
+  <rect x="668" y="335" width="118" height="28" rx="7" fill="#0b0b22" stroke="#4f46e5" stroke-opacity="0.45"/>
+  <text x="727" y="354" text-anchor="middle" fill="#9ca3c4" font-size="15">verificar-stock</text>
+
+  <line x1="690" y1="575" x2="690" y2="675" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ahv)"/>
+  <line x1="755" y1="675" x2="755" y2="575" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ahv)"/>
+  <line x1="1075" y1="675" x2="1075" y2="575" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ahv)"/>
+  <line x1="1010" y1="575" x2="1010" y2="675" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ahv)"/>
+  <line x1="1410" y1="675" x2="1410" y2="575" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ahv)"/>
+
+  <!-- Cliente -->
+  <rect x="70" y="300" width="165" height="90" rx="16" fill="url(#card)" stroke="#4f46e5" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="152" y="352" text-anchor="middle" fill="#e4e4ef" font-size="24" font-weight="600">Cliente</text>
+  <text x="152" y="376" text-anchor="middle" fill="#8b8ba7" font-size="16">Web / API</text>
+
+  <!-- API Gateway -->
+  <rect x="290" y="285" width="220" height="120" rx="18" fill="url(#accent)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>
+  <text x="400" y="332" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="700">API Gateway</text>
+  <text x="400" y="357" text-anchor="middle" fill="#e0e0ff" font-size="15">:3000 · JWT · Rate-limit</text>
+  <text x="400" y="379" text-anchor="middle" fill="#c7c7f5" font-size="15">Proxy · Correlation-ID</text>
+
+  <!-- Catalogo -->
+  <rect x="615" y="125" width="230" height="105" rx="16" fill="url(#card)" stroke="#4f46e5" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="730" y="170" text-anchor="middle" fill="#e4e4ef" font-size="24" font-weight="600">Catálogo</text>
+  <text x="730" y="196" text-anchor="middle" fill="#8b8ba7" font-size="16">:3001 · Restaurantes · Stock</text>
+  <g transform="translate(880,150)">
+    <ellipse cx="0" cy="0" rx="26" ry="9" fill="#312e81"/>
+    <path d="M-26,0 V46 A26,9 0 0 0 26,46 V0" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="26" ry="9" fill="#312e81" stroke="#6366f1" stroke-opacity="0.5"/>
+    <text x="0" y="70" text-anchor="middle" fill="#8b8ba7" font-size="14">SQLite</text>
+  </g>
+
+  <!-- Pedidos -->
+  <rect x="615" y="470" width="230" height="105" rx="16" fill="url(#card)" stroke="#4f46e5" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="730" y="515" text-anchor="middle" fill="#e4e4ef" font-size="24" font-weight="600">Pedidos</text>
+  <text x="730" y="541" text-anchor="middle" fill="#8b8ba7" font-size="16">:3002 · Órdenes · Saga</text>
+  <g transform="translate(880,495)">
+    <ellipse cx="0" cy="0" rx="26" ry="9" fill="#312e81"/>
+    <path d="M-26,0 V46 A26,9 0 0 0 26,46 V0" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="26" ry="9" fill="#312e81" stroke="#6366f1" stroke-opacity="0.5"/>
+    <text x="0" y="70" text-anchor="middle" fill="#8b8ba7" font-size="14">SQLite</text>
+  </g>
+
+  <!-- Pagos -->
+  <rect x="965" y="470" width="220" height="105" rx="16" fill="url(#card)" stroke="#4f46e5" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1075" y="515" text-anchor="middle" fill="#e4e4ef" font-size="24" font-weight="600">Pagos</text>
+  <text x="1075" y="541" text-anchor="middle" fill="#8b8ba7" font-size="16">Transacciones</text>
+  <g transform="translate(1215,495)">
+    <ellipse cx="0" cy="0" rx="26" ry="9" fill="#312e81"/>
+    <path d="M-26,0 V46 A26,9 0 0 0 26,46 V0" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="26" ry="9" fill="#312e81" stroke="#6366f1" stroke-opacity="0.5"/>
+    <text x="0" y="70" text-anchor="middle" fill="#8b8ba7" font-size="14">SQLite</text>
+  </g>
+
+  <!-- Notificaciones -->
+  <rect x="1305" y="470" width="225" height="105" rx="16" fill="url(#card)" stroke="#4f46e5" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1417" y="515" text-anchor="middle" fill="#e4e4ef" font-size="23" font-weight="600">Notificaciones</text>
+  <text x="1417" y="541" text-anchor="middle" fill="#8b8ba7" font-size="16">Consumidor de eventos</text>
+
+  <!-- RabbitMQ bus -->
+  <rect x="600" y="675" width="950" height="72" rx="18" fill="url(#bus)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5"/>
+  <text x="1075" y="710" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">RabbitMQ</text>
+  <text x="1075" y="733" text-anchor="middle" fill="#ede9fe" font-size="16">exchange topic · "delivery-events"</text>
+</svg>
